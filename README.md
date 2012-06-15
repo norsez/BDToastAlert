@@ -11,9 +11,7 @@ Sometimes your app might want to display messages to user, but not needing user 
 
 
 ##Requirements
-- Only tested in iOS 5.x 
-- ARC
-- UIKit
+- Requires ARC
 - QuartzCore.framework
 
 ##How to use
