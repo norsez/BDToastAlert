@@ -16,10 +16,10 @@
 		FF19645C158B05D700246D5E /* BDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF19645B158B05D700246D5E /* BDViewController.m */; };
 		FF19645F158B05D700246D5E /* BDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF19645D158B05D700246D5E /* BDViewController.xib */; };
 		FF19646D158B065400246D5E /* BDToastAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FF19646C158B065400246D5E /* BDToastAlert.m */; };
-		FF196472158B230F00246D5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF196471158B230F00246D5E /* README.md */; };
-		FF196474158B238200246D5E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF196473158B238200246D5E /* LICENSE */; };
 		FF196476158B25B300246D5E /* UILabel+BDToastAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FF196475158B25B300246D5E /* UILabel+BDToastAlert.m */; };
 		FF196479158B277A00246D5E /* BDViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = FF196478158B277A00246D5E /* BDViewController+Private.m */; };
+		FF19647C158B311B00246D5E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF19647A158B311B00246D5E /* LICENSE */; };
+		FF19647D158B311B00246D5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF19647B158B311B00246D5E /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +38,12 @@
 		FF19645E158B05D700246D5E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BDViewController.xib; sourceTree = "<group>"; };
 		FF19646B158B065400246D5E /* BDToastAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDToastAlert.h; sourceTree = "<group>"; };
 		FF19646C158B065400246D5E /* BDToastAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDToastAlert.m; sourceTree = "<group>"; };
-		FF19646E158B06C900246D5E /* UILabel+BDToastAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "UILabel+BDToastAlert.h"; sourceTree = "<group>"; };
-		FF196471158B230F00246D5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		FF196473158B238200246D5E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FF19646E158B06C900246D5E /* UILabel+BDToastAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BDToastAlert.h"; sourceTree = "<group>"; };
 		FF196475158B25B300246D5E /* UILabel+BDToastAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BDToastAlert.m"; sourceTree = "<group>"; };
 		FF196477158B277A00246D5E /* BDViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BDViewController+Private.h"; sourceTree = "<group>"; };
 		FF196478158B277A00246D5E /* BDViewController+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BDViewController+Private.m"; sourceTree = "<group>"; };
+		FF19647A158B311B00246D5E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FF19647B158B311B00246D5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,8 @@
 		FF196439158B05D600246D5E = {
 			isa = PBXGroup;
 			children = (
-				FF196473158B238200246D5E /* LICENSE */,
-				FF196471158B230F00246D5E /* README.md */,
+				FF19647A158B311B00246D5E /* LICENSE */,
+				FF19647B158B311B00246D5E /* README.md */,
 				FF19646A158B065400246D5E /* BDToastAlert */,
 				FF19644E158B05D600246D5E /* BDToastAlertDemo */,
 				FF196447158B05D600246D5E /* Frameworks */,
@@ -183,8 +183,8 @@
 			files = (
 				FF196453158B05D600246D5E /* InfoPlist.strings in Resources */,
 				FF19645F158B05D700246D5E /* BDViewController.xib in Resources */,
-				FF196472158B230F00246D5E /* README.md in Resources */,
-				FF196474158B238200246D5E /* LICENSE in Resources */,
+				FF19647C158B311B00246D5E /* LICENSE in Resources */,
+				FF19647D158B311B00246D5E /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
