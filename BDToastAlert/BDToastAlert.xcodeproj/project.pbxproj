@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF094911158B3A2400BE871E /* BDToastAlert.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FF094910158B3A2400BE871E /* BDToastAlert.podspec */; };
 		FF196449158B05D600246D5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF196448158B05D600246D5E /* UIKit.framework */; };
 		FF19644B158B05D600246D5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF19644A158B05D600246D5E /* Foundation.framework */; };
 		FF19644D158B05D600246D5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF19644C158B05D600246D5E /* CoreGraphics.framework */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF094910158B3A2400BE871E /* BDToastAlert.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BDToastAlert.podspec; path = ../BDToastAlert.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FF196444158B05D600246D5E /* BDToastAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDToastAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF196448158B05D600246D5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FF19644A158B05D600246D5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,6 +65,7 @@
 		FF196439158B05D600246D5E = {
 			isa = PBXGroup;
 			children = (
+				FF094910158B3A2400BE871E /* BDToastAlert.podspec */,
 				FF19647A158B311B00246D5E /* LICENSE */,
 				FF19647B158B311B00246D5E /* README.md */,
 				FF19646A158B065400246D5E /* BDToastAlert */,
@@ -185,6 +188,7 @@
 				FF19645F158B05D700246D5E /* BDViewController.xib in Resources */,
 				FF19647C158B311B00246D5E /* LICENSE in Resources */,
 				FF19647D158B311B00246D5E /* README.md in Resources */,
+				FF094911158B3A2400BE871E /* BDToastAlert.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +316,7 @@
 				FF196464158B05D700246D5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
