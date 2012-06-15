@@ -10,7 +10,9 @@ Sometimes your app might want to display messages to user, but not needing user 
 - QuartzCore.framework
 
 ##How to use
-See the sample project. There's really not much to it.
+- Include h/.m files in BDToastAlert folder to your project source code 
+- See the sample project. There's really not much to it.
+
 
 ##License
 BDToastAlert is licensed under BSD. More info in LICENSE file.

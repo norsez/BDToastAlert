@@ -10,4 +10,8 @@
 
 @interface BDViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UITextField* textField;
+
+- (IBAction)showOnce:(id)sender;
+
 @end

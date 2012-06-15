@@ -18,6 +18,8 @@
 		FF19646D158B065400246D5E /* BDToastAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FF19646C158B065400246D5E /* BDToastAlert.m */; };
 		FF196472158B230F00246D5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF196471158B230F00246D5E /* README.md */; };
 		FF196474158B238200246D5E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF196473158B238200246D5E /* LICENSE */; };
+		FF196476158B25B300246D5E /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FF196475158B25B300246D5E /* UILabel+Extension.m */; };
+		FF196479158B277A00246D5E /* BDViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = FF196478158B277A00246D5E /* BDViewController+Private.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,9 @@
 		FF19646E158B06C900246D5E /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		FF196471158B230F00246D5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		FF196473158B238200246D5E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FF196475158B25B300246D5E /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
+		FF196477158B277A00246D5E /* BDViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BDViewController+Private.h"; sourceTree = "<group>"; };
+		FF196478158B277A00246D5E /* BDViewController+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BDViewController+Private.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,8 @@
 				FF196458158B05D700246D5E /* BDAppDelegate.m */,
 				FF19645A158B05D700246D5E /* BDViewController.h */,
 				FF19645B158B05D700246D5E /* BDViewController.m */,
+				FF196477158B277A00246D5E /* BDViewController+Private.h */,
+				FF196478158B277A00246D5E /* BDViewController+Private.m */,
 				FF19645D158B05D700246D5E /* BDViewController.xib */,
 				FF19644F158B05D600246D5E /* Supporting Files */,
 			);
@@ -113,6 +120,7 @@
 		FF19646A158B065400246D5E /* BDToastAlert */ = {
 			isa = PBXGroup;
 			children = (
+				FF196475158B25B300246D5E /* UILabel+Extension.m */,
 				FF19646E158B06C900246D5E /* UILabel+Extension.h */,
 				FF19646B158B065400246D5E /* BDToastAlert.h */,
 				FF19646C158B065400246D5E /* BDToastAlert.m */,
@@ -191,6 +199,8 @@
 				FF196459158B05D700246D5E /* BDAppDelegate.m in Sources */,
 				FF19645C158B05D700246D5E /* BDViewController.m in Sources */,
 				FF19646D158B065400246D5E /* BDToastAlert.m in Sources */,
+				FF196476158B25B300246D5E /* UILabel+Extension.m in Sources */,
+				FF196479158B277A00246D5E /* BDViewController+Private.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
