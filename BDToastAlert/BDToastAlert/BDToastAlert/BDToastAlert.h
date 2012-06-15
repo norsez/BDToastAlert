@@ -10,6 +10,7 @@
 
 /**
  * Non-obstructive message label alert. (Think Growl or Toast on Android.)
+ * Toast default behavior automatically guards against displaying duplicate texts.
  */
 @interface BDToastAlert : NSObject 
 

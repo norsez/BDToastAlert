@@ -2,6 +2,13 @@
 
 Sometimes your app might want to display messages to user, but not needing user interaction to acknowledge those messages. 
 
+##Features
+- Basically, one toast per one parent view. (So you can have more than one toasts on your UISplitViewController's child  UIViewControllers.)
+- Automatically guards against displaying duplicate texts on the same parent view.
+- Singleton instance. Knows where all your toasts are.
+- Toast automatically resizes to fit your text size.
+
+
 
 ##Requirements
 - Only tested in iOS 5.x 
