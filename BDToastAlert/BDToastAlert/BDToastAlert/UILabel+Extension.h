@@ -1,9 +1,9 @@
 //
 //  UILabel+Extension.h
-//  Photosophia
+//  BDToastAlert
 //
 //  Created by Nor Oh on 5/19/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Bluedot. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

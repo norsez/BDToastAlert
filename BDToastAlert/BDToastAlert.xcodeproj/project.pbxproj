@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF196449158B05D600246D5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF196448158B05D600246D5E /* UIKit.framework */; };
+		FF19644B158B05D600246D5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF19644A158B05D600246D5E /* Foundation.framework */; };
+		FF19644D158B05D600246D5E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF19644C158B05D600246D5E /* CoreGraphics.framework */; };
+		FF196453158B05D600246D5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FF196451158B05D600246D5E /* InfoPlist.strings */; };
+		FF196455158B05D600246D5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF196454158B05D600246D5E /* main.m */; };
+		FF196459158B05D700246D5E /* BDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF196458158B05D700246D5E /* BDAppDelegate.m */; };
+		FF19645C158B05D700246D5E /* BDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF19645B158B05D700246D5E /* BDViewController.m */; };
+		FF19645F158B05D700246D5E /* BDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF19645D158B05D700246D5E /* BDViewController.xib */; };
+		FF19646D158B065400246D5E /* BDToastAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FF19646C158B065400246D5E /* BDToastAlert.m */; };
+		FF196472158B230F00246D5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF196471158B230F00246D5E /* README.md */; };
+		FF196474158B238200246D5E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF196473158B238200246D5E /* LICENSE */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FF196444158B05D600246D5E /* BDToastAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDToastAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF196448158B05D600246D5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FF19644A158B05D600246D5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FF19644C158B05D600246D5E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FF196450158B05D600246D5E /* BDToastAlert-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BDToastAlert-Info.plist"; sourceTree = "<group>"; };
+		FF196452158B05D600246D5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FF196454158B05D600246D5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FF196456158B05D600246D5E /* BDToastAlert-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BDToastAlert-Prefix.pch"; sourceTree = "<group>"; };
+		FF196457158B05D700246D5E /* BDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDAppDelegate.h; sourceTree = "<group>"; };
+		FF196458158B05D700246D5E /* BDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDAppDelegate.m; sourceTree = "<group>"; };
+		FF19645A158B05D700246D5E /* BDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDViewController.h; sourceTree = "<group>"; };
+		FF19645B158B05D700246D5E /* BDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDViewController.m; sourceTree = "<group>"; };
+		FF19645E158B05D700246D5E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BDViewController.xib; sourceTree = "<group>"; };
+		FF19646B158B065400246D5E /* BDToastAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDToastAlert.h; sourceTree = "<group>"; };
+		FF19646C158B065400246D5E /* BDToastAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDToastAlert.m; sourceTree = "<group>"; };
+		FF19646E158B06C900246D5E /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
+		FF196471158B230F00246D5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		FF196473158B238200246D5E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF196441158B05D600246D5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF196449158B05D600246D5E /* UIKit.framework in Frameworks */,
+				FF19644B158B05D600246D5E /* Foundation.framework in Frameworks */,
+				FF19644D158B05D600246D5E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF196439158B05D600246D5E = {
+			isa = PBXGroup;
+			children = (
+				FF196473158B238200246D5E /* LICENSE */,
+				FF196471158B230F00246D5E /* README.md */,
+				FF19646A158B065400246D5E /* BDToastAlert */,
+				FF19644E158B05D600246D5E /* BDToastAlertDemo */,
+				FF196447158B05D600246D5E /* Frameworks */,
+				FF196445158B05D600246D5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF196445158B05D600246D5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF196444158B05D600246D5E /* BDToastAlert.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF196447158B05D600246D5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF196448158B05D600246D5E /* UIKit.framework */,
+				FF19644A158B05D600246D5E /* Foundation.framework */,
+				FF19644C158B05D600246D5E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF19644E158B05D600246D5E /* BDToastAlertDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FF196457158B05D700246D5E /* BDAppDelegate.h */,
+				FF196458158B05D700246D5E /* BDAppDelegate.m */,
+				FF19645A158B05D700246D5E /* BDViewController.h */,
+				FF19645B158B05D700246D5E /* BDViewController.m */,
+				FF19645D158B05D700246D5E /* BDViewController.xib */,
+				FF19644F158B05D600246D5E /* Supporting Files */,
+			);
+			name = BDToastAlertDemo;
+			path = BDToastAlert;
+			sourceTree = "<group>";
+		};
+		FF19644F158B05D600246D5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF196450158B05D600246D5E /* BDToastAlert-Info.plist */,
+				FF196451158B05D600246D5E /* InfoPlist.strings */,
+				FF196454158B05D600246D5E /* main.m */,
+				FF196456158B05D600246D5E /* BDToastAlert-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF19646A158B065400246D5E /* BDToastAlert */ = {
+			isa = PBXGroup;
+			children = (
+				FF19646E158B06C900246D5E /* UILabel+Extension.h */,
+				FF19646B158B065400246D5E /* BDToastAlert.h */,
+				FF19646C158B065400246D5E /* BDToastAlert.m */,
+			);
+			name = BDToastAlert;
+			path = BDToastAlert/BDToastAlert;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF196443158B05D600246D5E /* BDToastAlert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF196462158B05D700246D5E /* Build configuration list for PBXNativeTarget "BDToastAlert" */;
+			buildPhases = (
+				FF196440158B05D600246D5E /* Sources */,
+				FF196441158B05D600246D5E /* Frameworks */,
+				FF196442158B05D600246D5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BDToastAlert;
+			productName = BDToastAlert;
+			productReference = FF196444158B05D600246D5E /* BDToastAlert.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF19643B158B05D600246D5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BD;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Bluedot;
+			};
+			buildConfigurationList = FF19643E158B05D600246D5E /* Build configuration list for PBXProject "BDToastAlert" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FF196439158B05D600246D5E;
+			productRefGroup = FF196445158B05D600246D5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF196443158B05D600246D5E /* BDToastAlert */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF196442158B05D600246D5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF196453158B05D600246D5E /* InfoPlist.strings in Resources */,
+				FF19645F158B05D700246D5E /* BDViewController.xib in Resources */,
+				FF196472158B230F00246D5E /* README.md in Resources */,
+				FF196474158B238200246D5E /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF196440158B05D600246D5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF196455158B05D600246D5E /* main.m in Sources */,
+				FF196459158B05D700246D5E /* BDAppDelegate.m in Sources */,
+				FF19645C158B05D700246D5E /* BDViewController.m in Sources */,
+				FF19646D158B065400246D5E /* BDToastAlert.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FF196451158B05D600246D5E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF196452158B05D600246D5E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FF19645D158B05D700246D5E /* BDViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF19645E158B05D700246D5E /* en */,
+			);
+			name = BDViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF196460158B05D700246D5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FF196461158B05D700246D5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF196463158B05D700246D5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BDToastAlert/BDToastAlert-Prefix.pch";
+				INFOPLIST_FILE = "BDToastAlert/BDToastAlert-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FF196464158B05D700246D5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BDToastAlert/BDToastAlert-Prefix.pch";
+				INFOPLIST_FILE = "BDToastAlert/BDToastAlert-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF19643E158B05D600246D5E /* Build configuration list for PBXProject "BDToastAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF196460158B05D700246D5E /* Debug */,
+				FF196461158B05D700246D5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF196462158B05D700246D5E /* Build configuration list for PBXNativeTarget "BDToastAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF196463158B05D700246D5E /* Debug */,
+				FF196464158B05D700246D5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF19643B158B05D600246D5E /* Project object */;
+}

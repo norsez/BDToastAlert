@@ -1,17 +1,17 @@
 //
 //  BDToastAlert.h
-//  Photosophia
+//  BDToastAlert
 //
 //  Created by Nor Oh on 5/19/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Bluedot. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "BDAlertDelegate.h"
+
 /**
- * Android-like Toast alert. The default parent view is the app's key window.
+ * Non-obstructive message label alert. (Think Growl or Toast on Android.)
  */
-@interface BDToastAlert : NSObject <BDAlertDelegate>
+@interface BDToastAlert : NSObject 
 
 -(NSArray*)allActiveToasts;
 - (void)clearAlert;
