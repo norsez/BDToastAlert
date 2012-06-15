@@ -8,7 +8,7 @@
 
 #import "BDToastAlert.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UILabel+Extension.h"
+#import "UILabel+BDToastAlert.h"
 
 #define kIntervalDelayHide 3
 #define kIntervalFade 0.35
@@ -203,7 +203,7 @@
     }
 }
 
-- (void)clearAlert
+- (void)clearAllToasts
 {
     dispatch_sync(_serial_q, ^{
         for (UIView * toast in _allActiveToasts) {
