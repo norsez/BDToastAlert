@@ -13,5 +13,6 @@
 @property (nonatomic, strong) IBOutlet UITextField* textField;
 
 - (IBAction)showOnce:(id)sender;
-
+- (IBAction)simulateDuplicateAlerts:(id)sender;
+- (IBAction)simulateNonDuplicateAlerts:(id)sender;
 @end
