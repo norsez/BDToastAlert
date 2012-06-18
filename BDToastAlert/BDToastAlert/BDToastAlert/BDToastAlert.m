@@ -201,6 +201,11 @@
 
 }
 
+- (void)showToastForError:(NSError *)error
+{
+    [self alertError:error];
+}
+
 - (void)alertWithErrorMessage:(NSString *)message title:(NSString *)title
 {
     [self _clearToastsNotInKeyWindow];
@@ -212,7 +217,6 @@
 - (void)alertError:(NSError *)error
 {
     [self alertWithErrorMessage:error.localizedDescription title:nil];
-
 }
 
 - (void)alertWithMessage:(NSString *)message title:(NSString *)title

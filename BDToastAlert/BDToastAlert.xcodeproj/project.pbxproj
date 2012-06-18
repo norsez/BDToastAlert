@@ -100,9 +100,9 @@
 				FF196458158B05D700246D5E /* BDAppDelegate.m */,
 				FF19645A158B05D700246D5E /* BDViewController.h */,
 				FF19645B158B05D700246D5E /* BDViewController.m */,
+				FF19645D158B05D700246D5E /* BDViewController.xib */,
 				FF196477158B277A00246D5E /* BDViewController+Private.h */,
 				FF196478158B277A00246D5E /* BDViewController+Private.m */,
-				FF19645D158B05D700246D5E /* BDViewController.xib */,
 				FF19644F158B05D600246D5E /* Supporting Files */,
 			);
 			name = BDToastAlertDemo;

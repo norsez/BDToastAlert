@@ -43,7 +43,12 @@
 @interface BDToastAlert : NSObject 
 
 //display toast on a UIViewController's view.
-- (void)showToastWithText:(NSString*)text onViewController:(UIViewController*)ctrlToShowOn;
+- (void)showToastWithText:(NSString*)text 
+         onViewController:(UIViewController*)ctrlToShowOn;
+
+//shows toast in red for an error. 
+//The text is taken from the error's localizedDescription.
+- (void)showToastForError:(NSError*)error;
 
 //clear all Toasts everywhere in your app.
 - (void)clearAllToasts;

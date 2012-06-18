@@ -15,4 +15,5 @@
 - (IBAction)showOnce:(id)sender;
 - (IBAction)simulateDuplicateAlerts:(id)sender;
 - (IBAction)simulateNonDuplicateAlerts:(id)sender;
+- (IBAction)errorAlert:(id)sender;
 @end
