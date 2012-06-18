@@ -69,7 +69,7 @@
 - (void)errorAlert:(id)sender
 {
     //this method shows an NSError's localized description text in Red regardless of your toast customization.
-    [_toast showToastForError:[NSError errorWithDomain:NSCocoaErrorDomain
+    [self.toast showToastForError:[NSError errorWithDomain:NSCocoaErrorDomain
                                                  code:-1 
                                              userInfo:[NSDictionary dictionaryWithObject:@"This is an error!"
                                                                                   forKey:NSLocalizedDescriptionKey]]];
