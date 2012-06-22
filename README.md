@@ -2,6 +2,8 @@
 
 Sometimes your app might want to display messages to user, but not needing user interaction to acknowledge those messages. Multiple duplicate messages are automatically suppressed for a short interval (great for, e.g. automatic alert for multiple URL connections that suddenly fail at the same time)  
 
+[![](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)
+
 ##Features
 - Basically, one toast per one parent view. (So you can have more than one toast on your UISplitViewController's child  UIViewControllers.)
 - Automatically guards against displaying duplicate texts on the same parent view.
