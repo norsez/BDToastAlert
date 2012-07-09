@@ -64,6 +64,11 @@
 //Toast background color. You can use alpha for transparency effect. The size of toast varies to fit your text.
 @property (nonatomic, strong) UIColor *toastColor;
 
+/**
+ The top point of the toast. This is where you set toast's location to appear on a view.
+ */
+@property (nonatomic, assign) CGFloat toastOriginY;
+
 //The singleton instance. Call this method for an instance. Do not use alloc, init or new.
 + (BDToastAlert *)sharedInstance;
 @end

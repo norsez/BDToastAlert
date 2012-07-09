@@ -164,10 +164,10 @@
     container.center = viewToShowOn.center;
     CGFloat yOffset = 0;
     
-    CGFloat heightOfViewToShowOn = viewToShowOn.frame.size.height;
+//    CGFloat heightOfViewToShowOn = viewToShowOn.frame.size.height;
     
     
-    yOffset = heightOfViewToShowOn - container.frame.size.height - kMargin - (_isKeyboardShowing?kHeightKeyboard:0);
+    yOffset = self.toastOriginY + kMargin - (_isKeyboardShowing?kHeightKeyboard:0);
     container.frame = CGRectMake(container.frame.origin.x, 
                                  yOffset,
                                  container.frame.size.width, 
@@ -262,6 +262,8 @@
                                nil];
         self.toastColor = [UIColor colorWithRed:0 green:0.12 blue:0.34 alpha:0.85];
         
+        self.toastOriginY = 0; 
+        
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(onDidShowKeyboard:) 
@@ -283,4 +285,8 @@
     dispatch_once(&once, ^ { singleton = [[BDToastAlert alloc] init]; });
     return singleton;
 }
+
+
+@synthesize toastOriginY;
+
 @end
