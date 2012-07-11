@@ -173,7 +173,7 @@
                                  container.frame.size.width, 
                                  container.frame.size.height);
     
-    
+    container.frame = CGRectIntegral(container.frame);
     
 //    DLog(@"toast frame: %@, viewToShowOn: %@, super view %@", NSStringFromCGRect(container.frame),
 //         NSStringFromCGRect(viewToShowOn.frame),
