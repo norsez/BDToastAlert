@@ -167,7 +167,7 @@
 //    CGFloat heightOfViewToShowOn = viewToShowOn.frame.size.height;
     
     
-    yOffset = self.toastOriginY + kMargin - (_isKeyboardShowing?kHeightKeyboard:0);
+    yOffset = (self.toastOriginYOffsetFactor * viewToShowOn.frame.size.height) + kMargin - (_isKeyboardShowing?kHeightKeyboard:0);
     container.frame = CGRectMake(container.frame.origin.x, 
                                  yOffset,
                                  container.frame.size.width, 
@@ -262,7 +262,7 @@
                                nil];
         self.toastColor = [UIColor colorWithRed:0 green:0.12 blue:0.34 alpha:0.85];
         
-        self.toastOriginY = 0; 
+        self.toastOriginYOffsetFactor = 0.46; 
         
         
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -287,6 +287,6 @@
 }
 
 
-@synthesize toastOriginY;
+@synthesize toastOriginYOffsetFactor;
 
 @end
