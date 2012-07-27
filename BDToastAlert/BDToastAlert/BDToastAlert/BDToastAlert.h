@@ -35,7 +35,7 @@
 
 
 #import <UIKit/UIKit.h>
-
+@protocol BDToastViewProtocol;
 /**
  * Non-obstructive message label alert. (Think Growl or Toast on Android.)
  * Toast default behavior automatically guards against displaying duplicate texts.
@@ -68,6 +68,16 @@
  The top point of the toast. This is where you set toast's location to appear on a view.
  */
 @property (nonatomic, assign) CGFloat toastOriginYOffsetFactor;
+
+/**
+ If this property is not nil, each time this class will display a toast,
+ it will initialize a UIView specified by this property, and use it
+ as custom Toast view. 
+ 
+ The custom view must adapt BDToastProtocol. Or else, this class will
+ fall back to the default toast view.
+ */
+@property (nonatomic, strong) NSString* customToastViewClassName;
 
 //The singleton instance. Call this method for an instance. Do not use alloc, init or new.
 + (BDToastAlert *)sharedInstance;

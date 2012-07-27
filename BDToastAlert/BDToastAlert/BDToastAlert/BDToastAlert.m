@@ -288,5 +288,5 @@
 
 
 @synthesize toastOriginYOffsetFactor;
-
+@synthesize customToastViewClassName;
 @end
