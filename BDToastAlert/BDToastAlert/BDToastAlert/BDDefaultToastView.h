@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 #import "BDToastViewProtocol.h"
 @interface BDDefaultToastView : UIView <BDToastViewProtocol>
-
+@property (nonatomic, assign) CGFloat textBorderWidth;
 @end
