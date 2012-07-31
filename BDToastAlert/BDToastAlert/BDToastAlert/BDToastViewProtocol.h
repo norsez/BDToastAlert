@@ -18,12 +18,5 @@
  */
 - (void) setToastText:(NSString*)toastText;
 
-/**
- BDToastAlert calls this method to resize the custom view
- to the input text.
- @param textToFit the text that the propcol adopter must resize 
-   itself to.
- */
-- (void) sizeToFitText:(NSString*)textToFit;
 
 @end
