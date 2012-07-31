@@ -107,6 +107,11 @@
     CGColorSpaceRelease(colorSpace);
 }
 
+- (NSString *)toastText
+{
+    return _textLabel.text;
+}
+
 - (void)setToastText:(NSString *)toastText
 {
     _textLabel.text = toastText;
