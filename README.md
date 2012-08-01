@@ -1,6 +1,14 @@
-#BDToastAlert - A simple UIKit class for displaying non-obstructive alert message labels on iOS UIView 
+#BDToastAlert - Self-managed HUD-style alert text.
 
-Sometimes your app might want to display messages to user, but not needing user interaction to acknowledge those messages. Multiple duplicate messages are automatically suppressed for a short interval (great for, e.g. automatic alert for multiple URL connections that suddenly fail at the same time)  
+##Overview
+
+BDToastAlert provides you an easy way to display non-obstructive messages to 
+user without having to worry about the view heirachy (too much.) It also takes care
+of not displaying repetitive message or displaying them in a nicer fashion.
+
+##version 2.0
+
+
 
 [![](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)
 
