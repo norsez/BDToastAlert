@@ -23,9 +23,22 @@
     _textLabel.textAlignment = UITextAlignmentCenter;
     _textLabel.lineBreakMode = UILineBreakModeWordWrap;
     _textLabel.numberOfLines = 0;
-    self.textBorderWidth = 2;
+    _textLabel.opaque = NO;
+    _textLabel.textColor = [UIColor lightTextColor];
+    _textLabel.shadowColor = [UIColor lightTextColor];
+    _textLabel.shadowOffset = CGSizeMake(0, 1);
+    self.textBorderWidth = 15;
     [self addSubview:_textLabel];
     _textLabel.center = self.center;
+    self.opaque = NO;
+    self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    _textLabel.autoresizingMask = self.autoresizingMask;
+    self.maximumSize = CGSizeMake(300, 60);
+    self.startGradientColor = [UIColor colorWithRed: 0.4 green: 0.84 blue: 0.99 alpha: 0.85];
+    self.endGradientColor = [UIColor colorWithRed: 0.05 green: 0.65 blue: 0.99 alpha: 0.9];
+    self.shadowColor = [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 0.79];
+    self.backgroundRadius = 4;
+    
 }
 
 
@@ -49,60 +62,50 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    //// General Declarations
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = UIGraphicsGetCurrentContext();
-    UIColor* gradientColor = [UIColor colorWithRed: 0.62 green: 0.79 blue: 0.86 alpha: 0.9];
-    UIColor* gradientColor2 = [UIColor colorWithRed: 0.06 green: 0.6 blue: 0.9 alpha: 0.9];
-    UIColor* outerShadowColor = [UIColor colorWithRed: 0.12 green: 0.12 blue: 0.12 alpha: 0.6];
-    UIColor* innerShadowColor = [UIColor colorWithRed: 0.34 green: 0.68 blue: 0.75 alpha: 0.9];
-
+    
+    //// Color Declarations
+    UIColor* gradientColor = self.startGradientColor;
+    UIColor* gradientColor2 = self.endGradientColor;
+    UIColor* shadowColorAlpha = self.shadowColor;
+    
+    //// Gradient Declarations
     NSArray* gradientColors = [NSArray arrayWithObjects: 
                                (id)gradientColor.CGColor, 
                                (id)gradientColor2.CGColor, nil];
     CGFloat gradientLocations[] = {0, 1};
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientColors, gradientLocations);
     
-    UIColor* outerShadow = outerShadowColor;
-    CGSize outerShadowOffset = CGSizeMake(1, 2);
-    CGFloat outerShadowBlurRadius = 5;
-    UIColor* innerShadow = innerShadowColor;
-    CGSize innerShadowOffset = CGSizeMake(1, 3);
-    CGFloat innerShadowBlurRadius = 2;
+    //// Shadow Declarations
+    UIColor* shadow = shadowColorAlpha;
+    CGSize shadowOffset = CGSizeMake(1, 3);
+    CGFloat shadowBlurRadius = self.backgroundRadius;
     
-    CGRect frameRect = self.bounds;
-    CGFloat frameRectRadius = 8;
-    UIBezierPath* roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect: frameRect cornerRadius: frameRectRadius];
+    //// Frames
+    CGRect frame = self.bounds;
+    
+    //// Abstracted Graphic Attributes
+    CGRect toastViewRect = CGRectMake(CGRectGetMinX(frame) + floor(CGRectGetWidth(frame) * 0.02), CGRectGetMinY(frame) + floor(CGRectGetHeight(frame) * 0.06), floor(CGRectGetWidth(frame) * 0.94), floor(CGRectGetHeight(frame) * 0.83));
+    CGFloat toastViewCornerRadius = backgroundRadius;
+    
+    
+    //// toastView Drawing
+    UIBezierPath* toastViewPath = [UIBezierPath bezierPathWithRoundedRect: toastViewRect cornerRadius: toastViewCornerRadius];
     CGContextSaveGState(context);
-    CGContextSetShadowWithColor(context, outerShadowOffset, outerShadowBlurRadius, outerShadow.CGColor);
+    CGContextSetShadowWithColor(context, shadowOffset, shadowBlurRadius, shadow.CGColor);
     CGContextBeginTransparencyLayer(context, NULL);
-    [roundedRectanglePath addClip];
-    CGContextDrawLinearGradient(context, gradient, CGPointMake(124, 46.5), CGPointMake(124, 91.5), 0);
+    [toastViewPath addClip];
+    CGContextDrawLinearGradient(context, gradient,
+                                CGPointMake(CGRectGetMidX(toastViewRect), CGRectGetMinY(toastViewRect)),
+                                CGPointMake(CGRectGetMidX(toastViewRect), CGRectGetMaxY(toastViewRect)),
+                                0);
     CGContextEndTransparencyLayer(context);
-    CGRect roundedRectangleBorderRect = CGRectInset([roundedRectanglePath bounds], -innerShadowBlurRadius, -innerShadowBlurRadius);
-    roundedRectangleBorderRect = CGRectOffset(roundedRectangleBorderRect, -innerShadowOffset.width, -innerShadowOffset.height);
-    roundedRectangleBorderRect = CGRectInset(CGRectUnion(roundedRectangleBorderRect, [roundedRectanglePath bounds]), -1, -1);
-    
-    UIBezierPath* roundedRectangleNegativePath = [UIBezierPath bezierPathWithRect: roundedRectangleBorderRect];
-    [roundedRectangleNegativePath appendPath: roundedRectanglePath];
-    roundedRectangleNegativePath.usesEvenOddFillRule = YES;
-    
-    CGContextSaveGState(context);
-    {
-        CGFloat xOffset = innerShadowOffset.width + round(roundedRectangleBorderRect.size.width);
-        CGFloat yOffset = innerShadowOffset.height;
-        CGContextSetShadowWithColor(context,
-                                    CGSizeMake(xOffset + copysign(0.1, xOffset), yOffset + copysign(0.1, yOffset)),
-                                    innerShadowBlurRadius,
-                                    innerShadow.CGColor);
-        
-        [roundedRectanglePath addClip];
-        CGAffineTransform transform = CGAffineTransformMakeTranslation(-round(roundedRectangleBorderRect.size.width), 0);
-        [roundedRectangleNegativePath applyTransform: transform];
-        [[UIColor grayColor] setFill];
-        [roundedRectangleNegativePath fill];
-    }
     CGContextRestoreGState(context);
-    CGContextRestoreGState(context);
+    
+    
+    //// Cleanup
     CGGradientRelease(gradient);
     CGColorSpaceRelease(colorSpace);
 }
@@ -115,26 +118,27 @@
 - (void)setToastText:(NSString *)toastText
 {
     _textLabel.text = toastText;
-    [self setNeedsLayout];
-}
-
-- (CGSize)sizeConstraint
-{
-    return [UIApplication sharedApplication].keyWindow.bounds.size;
+    [self layoutSubviews];
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     CGSize labelSize = [_textLabel.text sizeWithFont:_textLabel.font
-                        constrainedToSize:[self sizeConstraint]
+                        constrainedToSize:self.maximumSize
                                        lineBreakMode:UILineBreakModeWordWrap];
-    _textLabel.bounds = CGRectMake(0, 0, labelSize.width, labelSize.height);
-    self.bounds = CGRectInset(_textLabel.bounds, self.textBorderWidth, self.textBorderWidth);
-    _textLabel.center = self.center;
+    self.frame = CGRectMake(self.frame.origin.x,self.frame.origin.y, labelSize.width + self.textBorderWidth*2, labelSize.height + self.textBorderWidth*2);
+    _textLabel.frame = CGRectMake(0, 0, labelSize.width, labelSize.height);
+    _textLabel.frame = CGRectOffset(_textLabel.frame, self.textBorderWidth, self.textBorderWidth);
     [self setNeedsDisplay];
 }
 
-@synthesize textBorderWidth;
 
+@synthesize textBorderWidth;
+@synthesize maximumSize;
+@synthesize endGradientColor;
+@synthesize startGradientColor;
+@synthesize shadowColor;
+@synthesize backgroundRadius;
+@synthesize textLabel=_textLabel;
 @end
