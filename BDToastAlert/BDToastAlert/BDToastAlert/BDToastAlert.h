@@ -56,14 +56,6 @@
 //All active toast UIView instances currently in your app.
 -(NSArray*)allActiveToasts;
 
-
-
-//Toast text attributes. See http://developer.apple.com/library/ios/documentation/uikit/reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/doc/uid/TP40006893-CH3-DontLinkElementID_3
-@property (nonatomic, strong) NSDictionary* textAttributes;
-
-//Toast background color. You can use alpha for transparency effect. The size of toast varies to fit your text.
-@property (nonatomic, strong) UIColor *toastColor;
-
 /**
  The top point of the toast. This is where you set toast's location to appear on a view.
  */

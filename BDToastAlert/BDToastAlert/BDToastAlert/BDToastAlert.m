@@ -35,15 +35,17 @@
 
 #import "BDToastAlert.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UILabel+BDToastAlert.h"
+#import "BDToastViewProtocol.h"
 
 #define kIntervalDelayHide 3
 #define kIntervalFade 0.35
-#define kMargin 8
+#define kMargin 10
 #define kMaxHeight 100
 #define kIntervalDelayAllowDuplicateMessage 2
 #define kColorError [UIColor colorWithRed:0.4 green:0 blue:0 alpha:0.67]
 #define kHeightKeyboard  215
+
+#define kDefaultToastClass @"BDDefaultToastView"
 
 @interface BDToastAlert (){
     NSMutableSet *_shownTexts; //these texts are removed within kIntervalDelayAllowDuplicateMess
@@ -53,7 +55,7 @@
 }
 - (void)_removeShownText:(NSString*)text;
 - (void)_queueToastViewWithText:(NSString*)text onViewController:(UIViewController*)viewToShowOn withColor:(UIColor*)color;
-- (void)_showToastOnView:(UIView*)viewToShowOn withLabel:(UILabel*)label container:(UIView*)container;
+- (void)_showToast:(UIView<BDToastViewProtocol>*)toastView onView:(UIView*)viewToShowOn;
 - (void)_clearToastsNotInKeyWindow;
 
 
@@ -128,73 +130,49 @@
         }
     }
     
-    UILabel *_label;
-    UIView *_container;
-    if  (!_label){
-        CGSize screenSize;
-        
-        if (viewToShowOn == nil) {
-            screenSize = [[UIScreen mainScreen]bounds].size;            
-        }else {
-            screenSize = viewToShowOn.frame.size;
-        }
-        
-        _container = [UILabel framedLabelWithText:text textAttributes:self.textAttributes constraintToSize:CGSizeMake(screenSize.width-20, kMaxHeight) borderWidth:kMargin];
-        _container.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
-        _label = [_container.subviews objectAtIndex:0];
-        
-        if (customizedColor){
-            _container.backgroundColor = customizedColor;
-        }else if (self.toastColor) {
-            _container.backgroundColor = self.toastColor;
-        }
-        
-    }
-    _label.text = text;
-    [_shownTexts addObject:text];
-    [self _showToastOnView:viewToShowOn withLabel:_label container:_container];    
-
+    UIView<BDToastViewProtocol> *toastView = [[NSClassFromString(self.customToastViewClassName) alloc] init];
+    NSAssert(toastView!=nil,@"%@ cannot be initialized", self.customToastViewClassName);
+    NSAssert([toastView conformsToProtocol:@protocol(BDToastViewProtocol) ], @"custom toast view must conform to BDToastViewProtocol.");
+    [toastView setToastText:text];
     
+    CGRect toastMaxBounds = CGRectMake(0, 0, CGRectGetWidth(viewToShowOn.bounds) - kMargin, CGRectGetHeight(viewToShowOn.bounds) - kMargin);
+    if (CGRectGetWidth(toastView.bounds) > CGRectGetWidth(toastMaxBounds)){
+        CGFloat scale = toastMaxBounds.size.width/toastView.bounds.size.width;
+        toastView.frame = CGRectMake(0, 0, CGRectGetWidth(toastView.bounds) * scale, CGRectGetHeight(toastView.bounds) * scale);
+        [toastView setNeedsLayout];
+    }
+    
+    [_shownTexts addObject:text];
+    [self _showToast:toastView onView:viewToShowOn];
 }
 
-- (void)_showToastOnView:(UIView *)viewToShowOn withLabel:(UILabel *)label container:(UIView *)container
+- (void)_showToast:(UIView<BDToastViewProtocol>*)toastView onView:(UIView*)viewToShowOn
 {
 
-    container.alpha = 0.f;
-    container.center = viewToShowOn.center;
+    toastView.alpha = 0.f;
     CGFloat yOffset = 0;
     
-//    CGFloat heightOfViewToShowOn = viewToShowOn.frame.size.height;
     
-    
+    [viewToShowOn addSubview:toastView];    
     yOffset = (self.toastOriginYOffsetFactor * viewToShowOn.frame.size.height) + kMargin - (_isKeyboardShowing?kHeightKeyboard:0);
-    container.frame = CGRectMake(container.frame.origin.x, 
-                                 yOffset,
-                                 container.frame.size.width, 
-                                 container.frame.size.height);
-    
-    container.frame = CGRectIntegral(container.frame);
-    
-//    DLog(@"toast frame: %@, viewToShowOn: %@, super view %@", NSStringFromCGRect(container.frame),
-//         NSStringFromCGRect(viewToShowOn.frame),
-//         viewToShowOn.superview);
+    toastView.frame = CGRectOffset(toastView.bounds, 0.5f * (CGRectGetWidth(viewToShowOn.frame) - CGRectGetWidth(toastView.frame)), yOffset);
+    toastView.frame = CGRectIntegral(toastView.frame);
 
-    [_allActiveToasts addObject:container];
-    [viewToShowOn addSubview:container];
-    [viewToShowOn bringSubviewToFront:container];
+    [_allActiveToasts addObject:toastView];
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:kIntervalFade 
                          animations:^{
-                             container.alpha = 1;
+                             toastView.alpha = 1;
                          } completion:^(BOOL finished) {
                              [UIView animateWithDuration:kIntervalFade 
                                                    delay:kIntervalDelayHide options:UIViewAnimationOptionTransitionCrossDissolve
                                               animations:^{
-                                                  container.alpha = 0;
+                                                  toastView.alpha = 0;
                                               } completion:^(BOOL finished) {
-                                                  [self performSelector:@selector(_removeShownText:) withObject:label.text afterDelay:kIntervalDelayAllowDuplicateMessage];
-                                                  [container removeFromSuperview];
-                                                  [_allActiveToasts removeObject:container];
+                                                  [self performSelector:@selector(_removeShownText:) withObject:toastView.toastText afterDelay:kIntervalDelayAllowDuplicateMessage];
+                                                  [toastView removeFromSuperview];
+                                                  [_allActiveToasts removeObject:toastView];
                                               }];
                          }];
     });
@@ -246,7 +224,6 @@
 }
 
 #pragma mark - singleton
-@synthesize textAttributes, toastColor;
 - (id)init
 {
     self = [super init];
@@ -254,14 +231,7 @@
         _serial_q = dispatch_queue_create("BDToastAlert serial queue", NULL);
         _shownTexts = [[NSMutableSet alloc] init];
         _allActiveToasts = [[NSMutableArray alloc] init];
-        self.textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                               [UIFont systemFontOfSize:14], UITextAttributeFont,
-                               [UIColor whiteColor], UITextAttributeTextColor,
-                               [UIColor darkGrayColor], UITextAttributeTextShadowColor,
-                               [NSValue valueWithUIOffset:UIOffsetMake(0, -1)], UITextAttributeTextShadowOffset,
-                               nil];
-        self.toastColor = [UIColor colorWithRed:0 green:0.12 blue:0.34 alpha:0.85];
-        
+        self.customToastViewClassName = kDefaultToastClass;
         self.toastOriginYOffsetFactor = 0.46; 
         
         
