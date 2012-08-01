@@ -81,12 +81,6 @@
 {
     if (!_toast) {
         _toast = [BDToastAlert sharedInstance];
-        //You can set up the text attributes and the toast background color
-        self.toast.toastColor = [UIColor colorWithWhite:0.25 alpha:0.9];
-        self.toast.textAttributes = [NSDictionary dictionaryWithObjectsAndKeys: 
-                                     [UIFont boldSystemFontOfSize:20], UITextAttributeFont,
-                                     [UIColor colorWithWhite:0.9 alpha:1], UITextAttributeTextColor,
-                                     nil];
 
     }
     return _toast;
