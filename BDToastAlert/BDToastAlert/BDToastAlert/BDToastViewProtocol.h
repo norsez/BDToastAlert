@@ -18,5 +18,9 @@
  */
 - (void) setToastText:(NSString*)toastText;
 
+/**
+ @return text currently set to this toast by -setToastText:.
+ */
+- (NSString*)toastText;
 
 @end
