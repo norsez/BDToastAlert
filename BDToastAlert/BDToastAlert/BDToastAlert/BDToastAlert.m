@@ -153,15 +153,17 @@
     [viewToShowOn addSubview:toastView];    
     
     //define the displayed area on the viewToShowOn
-    CGRect displayableBounds = CGRectMake(kMargin, kMargin, 
+    CGRect displayableBounds = CGRectMake(kMargin + viewToShowOn.frame.origin.x, 
+                                          kMargin + viewToShowOn.frame.origin.y, 
                                           CGRectGetWidth(viewToShowOn.bounds) - (kMargin*2), 
                                           CGRectGetHeight(viewToShowOn.bounds) - (kMargin*2) - (_isKeyboardShowing?kHeightKeyboard:0));
     
     //place the toast according to the vertical alignment setting
     if (self.verticalAlignment == BDToastVerticalAlignmentCenter) {
-        CGPoint centerOfDisplayableBounds = CGPointMake((CGRectGetWidth(displayableBounds) * 0.5) + kMargin ,
-                                                        (CGRectGetHeight(displayableBounds)  * 0.5) + kMargin);
-        toastView.center = centerOfDisplayableBounds;
+        toastView.frame =  CGRectMake( displayableBounds.origin.x + (0.5 *(displayableBounds.origin.x + CGRectGetWidth(displayableBounds) - CGRectGetWidth(toastView.frame))), 
+                                       displayableBounds.origin.y + (0.5 *(displayableBounds.origin.y + CGRectGetHeight(displayableBounds) - CGRectGetHeight(toastView.frame))), 
+                                      CGRectGetWidth(toastView.frame), 
+                                      CGRectGetHeight(toastView.frame));
     }else if(self.verticalAlignment == BDToastVerticalAlignmentTop){
         toastView.frame = CGRectOffset(toastView.bounds, 0.5 *(CGRectGetWidth(displayableBounds) - CGRectGetWidth(toastView.bounds)) , kMargin);
     }else {
