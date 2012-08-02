@@ -3,22 +3,71 @@
 ##Overview
 
 BDToastAlert provides you an easy way to display non-obstructive messages to 
-user without having to worry about the view heirachy (too much.) It also takes care
-of not displaying repetitive message or displaying them in a nicer fashion.
+user without having to worry about its behavior and conflicts with other views.
 
-##version 2.0
+##version 1.0
+
+The first major version release, i.e. incompatibility with previous betas. :(
 
 
 
-[![](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)
+
+<!--[![](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)
+-->
+##How to use
+Out of the box, all you need to do is first get the singleton
+
+	BDToastAlert *toast = [BDToastAlert shared];
+
+In order to display a message, call 
+
+
+
+	UIViewController *ctrl  = <a view contorller…>
+	[toast showToastWithText:@"Hello!" onViewController:ctrl];
+
+- That's it! You should see your text on the controller's view.
 
 ##Features
-- Basically, one toast per one parent view. (So you can have more than one toast on your UISplitViewController's child  UIViewControllers.)
-- Automatically guards against displaying duplicate texts on the same parent view.
-- Singleton instance. Knows where all your toasts are.
-- Toast automatically resizes to fit your text size.
 
+BDToastAlert works out of the box. However, you can customize it a bit if you like
 
+- `BDToastVerticalAlignment` defines where the toast should appear on the specified view.
+- `customToastViewClassName` defines the class name of your own custom toast view. 
+
+###Customizing Toast 
+
+Two ways:
+
+####By Subclassing
+Though you can start from scratch with a custom UIView for a custom toast view, I recommend subclassing the `BDDefaultToastView` class. This is the default view that `BDToastAlert` uses out of the box. 
+
+An example for customizing toast view by subclassing `BDDefaultToastView`. 
+
+To change the toast font, override the `-init` method, like this
+
+	- (id)init
+	{
+	    self = [super init];
+	    if (self) {
+	        self.textLabel.font = <your font>;
+	    }
+	    return self;
+	}
+
+If you are guessing `textLabel` property is the `UILabel` on the `BDDefaultToastView` class, then you are correct. You can configure the label any way you like. For the background gradient, the following methods configure how it looks
+
+- startGradientColor
+- endGradientColor
+- shadowColor
+- backgroundRadius
+
+####Start from scratch
+You can subclass a `UIView` for your custom toast with the following requirements:
+
+1. The view must conform to the `BDToastViewProtocol`
+2. The designated initializer (i.e. all your init code must be in) is the `-init` method. This is because
+3. In order to use it with `BDToastAlert`, set the class name to its `customToastViewClassName` property. The `BDToastAlert` singleton creates an instance of your custom toast view using `-init` method only.
 
 ##Requirements
 - Requires ARC
