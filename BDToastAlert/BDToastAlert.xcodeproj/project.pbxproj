@@ -17,7 +17,6 @@
 		FF19645C158B05D700246D5E /* BDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF19645B158B05D700246D5E /* BDViewController.m */; };
 		FF19645F158B05D700246D5E /* BDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF19645D158B05D700246D5E /* BDViewController.xib */; };
 		FF19646D158B065400246D5E /* BDToastAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FF19646C158B065400246D5E /* BDToastAlert.m */; };
-		FF196476158B25B300246D5E /* UILabel+BDToastAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FF196475158B25B300246D5E /* UILabel+BDToastAlert.m */; };
 		FF196479158B277A00246D5E /* BDViewController+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = FF196478158B277A00246D5E /* BDViewController+Private.m */; };
 		FF19647C158B311B00246D5E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF19647A158B311B00246D5E /* LICENSE */; };
 		FF19647D158B311B00246D5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF19647B158B311B00246D5E /* README.md */; };
@@ -41,8 +40,6 @@
 		FF19645E158B05D700246D5E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BDViewController.xib; sourceTree = "<group>"; };
 		FF19646B158B065400246D5E /* BDToastAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDToastAlert.h; sourceTree = "<group>"; };
 		FF19646C158B065400246D5E /* BDToastAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDToastAlert.m; sourceTree = "<group>"; };
-		FF19646E158B06C900246D5E /* UILabel+BDToastAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BDToastAlert.h"; sourceTree = "<group>"; };
-		FF196475158B25B300246D5E /* UILabel+BDToastAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BDToastAlert.m"; sourceTree = "<group>"; };
 		FF196477158B277A00246D5E /* BDViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BDViewController+Private.h"; sourceTree = "<group>"; };
 		FF196478158B277A00246D5E /* BDViewController+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BDViewController+Private.m"; sourceTree = "<group>"; };
 		FF19647A158B311B00246D5E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -130,8 +127,6 @@
 				FF371B7415C7E3DD000A7F15 /* BDDefaultToastView.m */,
 				FF371B7515C7E3DD000A7F15 /* BDDefaultToastView.h */,
 				FF371B7615C7E3DD000A7F15 /* BDToastViewProtocol.h */,
-				FF196475158B25B300246D5E /* UILabel+BDToastAlert.m */,
-				FF19646E158B06C900246D5E /* UILabel+BDToastAlert.h */,
 				FF19646B158B065400246D5E /* BDToastAlert.h */,
 				FF19646C158B065400246D5E /* BDToastAlert.m */,
 			);
@@ -210,7 +205,6 @@
 				FF196459158B05D700246D5E /* BDAppDelegate.m in Sources */,
 				FF19645C158B05D700246D5E /* BDViewController.m in Sources */,
 				FF19646D158B065400246D5E /* BDToastAlert.m in Sources */,
-				FF196476158B25B300246D5E /* UILabel+BDToastAlert.m in Sources */,
 				FF196479158B277A00246D5E /* BDViewController+Private.m in Sources */,
 				FF371B7715C7E3DD000A7F15 /* BDDefaultToastView.m in Sources */,
 			);
