@@ -66,22 +66,12 @@
 
 }
 
-- (void)errorAlert:(id)sender
-{
-    //this method shows an NSError's localized description text in Red regardless of your toast customization.
-    [self.toast showToastForError:[NSError errorWithDomain:NSCocoaErrorDomain
-                                                 code:-1 
-                                             userInfo:[NSDictionary dictionaryWithObject:@"This is an error!"
-                                                                                  forKey:NSLocalizedDescriptionKey]]];
-}
-
 
 #pragma mark - private
 - (BDToastAlert *)toast
 {
     if (!_toast) {
         _toast = [BDToastAlert sharedInstance];
-
     }
     return _toast;
 }
