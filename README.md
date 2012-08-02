@@ -5,28 +5,27 @@
 BDToastAlert provides you an easy way to display non-obstructive messages to 
 user without having to worry about its behavior and conflicts with other views.
 
-##version 1.0
+##version 1.0.0
 
-The first major version release, i.e. incompatibility with previous betas. :(
+The first major version release. 
+
+And hence incompatibility with previous betas. :( Sorry early adopters, but this
+version API is simpler, and more importantly, now it looks great! See below.
 
 
+[![](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)
 
-
-<!--[![](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)](https://github.com/norsez/BDToastAlert/raw/master/BDToastAlert/screencap.png)
--->
 ##How to use
 Out of the box, all you need to do is first get the singleton
 
 	BDToastAlert *toast = [BDToastAlert shared];
 
-In order to display a message, call 
-
-
+In order to display a message, call
 
 	UIViewController *ctrl  = <a view contorller…>
 	[toast showToastWithText:@"Hello!" onViewController:ctrl];
 
-- That's it! You should see your text on the controller's view.
+That's it! You should see your text on the controller's view.
 
 ##Features
 
