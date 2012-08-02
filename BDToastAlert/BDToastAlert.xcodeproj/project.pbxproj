@@ -21,6 +21,7 @@
 		FF19647C158B311B00246D5E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FF19647A158B311B00246D5E /* LICENSE */; };
 		FF19647D158B311B00246D5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF19647B158B311B00246D5E /* README.md */; };
 		FF371B7715C7E3DD000A7F15 /* BDDefaultToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF371B7415C7E3DD000A7F15 /* BDDefaultToastView.m */; };
+		FFFA7E5215CA6DFE003BFC83 /* screencap.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFA7E5115CA6DFE003BFC83 /* screencap.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		FF371B7415C7E3DD000A7F15 /* BDDefaultToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDDefaultToastView.m; sourceTree = "<group>"; };
 		FF371B7515C7E3DD000A7F15 /* BDDefaultToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDDefaultToastView.h; sourceTree = "<group>"; };
 		FF371B7615C7E3DD000A7F15 /* BDToastViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDToastViewProtocol.h; sourceTree = "<group>"; };
+		FFFA7E5115CA6DFE003BFC83 /* screencap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screencap.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				FF094910158B3A2400BE871E /* BDToastAlert.podspec */,
 				FF19647A158B311B00246D5E /* LICENSE */,
 				FF19647B158B311B00246D5E /* README.md */,
+				FFFA7E5115CA6DFE003BFC83 /* screencap.png */,
 				FF19646A158B065400246D5E /* BDToastAlert */,
 				FF19644E158B05D600246D5E /* BDToastAlertDemo */,
 				FF196447158B05D600246D5E /* Frameworks */,
@@ -191,6 +194,7 @@
 				FF19647C158B311B00246D5E /* LICENSE in Resources */,
 				FF19647D158B311B00246D5E /* README.md in Resources */,
 				FF094911158B3A2400BE871E /* BDToastAlert.podspec in Resources */,
+				FFFA7E5215CA6DFE003BFC83 /* screencap.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
