@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'Easy way to display non-obstructive messages to user without having to worry about its behavior and conflicts with other views.'
   s.homepage = 'https://github.com/norsez/BDToastAlert'
   s.author   = { 'Norsez Orankijanan' => 'norsez@gmail.com' }
-  s.source   = { :git => 'https://github.com/norsez/BDToastAlert.git', :tag => '0.1.0' }
+  s.source   = { :git => 'https://github.com/norsez/BDToastAlert.git', :tag => '1.0.0' }
     s.description = 'Easy way to display non-obstructive messages to user without having to worry about its behavior and conflicts with other views.'
   s.platform = :ios
   s.source_files = 'Classes', 'BDToastAlert/BDToastAlert/BDToastAlert'
