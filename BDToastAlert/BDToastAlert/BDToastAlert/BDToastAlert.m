@@ -150,12 +150,26 @@
 {
 
     toastView.alpha = 0.f;
-    CGFloat yOffset = 0;
-    
-    
     [viewToShowOn addSubview:toastView];    
-    yOffset = (self.toastOriginYOffsetFactor * viewToShowOn.frame.size.height) + kMargin - (_isKeyboardShowing?kHeightKeyboard:0);
-    toastView.frame = CGRectOffset(toastView.bounds, 0.5f * (CGRectGetWidth(viewToShowOn.frame) - CGRectGetWidth(toastView.frame)), yOffset);
+    
+    //define the displayed area on the viewToShowOn
+    CGRect displayableBounds = CGRectMake(kMargin, kMargin, 
+                                          CGRectGetWidth(viewToShowOn.bounds) - (kMargin*2), 
+                                          CGRectGetHeight(viewToShowOn.bounds) - (kMargin*2) - (_isKeyboardShowing?kHeightKeyboard:0));
+    
+    //place the toast according to the vertical alignment setting
+    if (self.verticalAlignment == BDToastVerticalAlignmentCenter) {
+        CGPoint centerOfDisplayableBounds = CGPointMake((CGRectGetWidth(displayableBounds) * 0.5) + kMargin ,
+                                                        (CGRectGetHeight(displayableBounds)  * 0.5) + kMargin);
+        toastView.center = centerOfDisplayableBounds;
+    }else if(self.verticalAlignment == BDToastVerticalAlignmentTop){
+        toastView.frame = CGRectOffset(toastView.bounds, 0.5 *(CGRectGetWidth(displayableBounds) - CGRectGetWidth(toastView.bounds)) , kMargin);
+    }else {
+        toastView.frame = CGRectOffset(toastView.bounds, 
+                                       0.5 *(CGRectGetWidth(displayableBounds) - CGRectGetWidth(toastView.bounds)) , 
+                                       CGRectGetHeight(displayableBounds) - CGRectGetHeight(toastView.bounds) + kMargin);
+    }
+
     toastView.frame = CGRectIntegral(toastView.frame);
 
     [_allActiveToasts addObject:toastView];
@@ -232,7 +246,6 @@
         _shownTexts = [[NSMutableSet alloc] init];
         _allActiveToasts = [[NSMutableArray alloc] init];
         self.customToastViewClassName = kDefaultToastClass;
-        self.toastOriginYOffsetFactor = 0.46; 
         
         
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -257,6 +270,7 @@
 }
 
 
-@synthesize toastOriginYOffsetFactor;
+
 @synthesize customToastViewClassName;
+@synthesize verticalAlignment;
 @end

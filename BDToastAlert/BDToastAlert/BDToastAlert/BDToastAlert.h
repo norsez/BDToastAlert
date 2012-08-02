@@ -35,6 +35,13 @@
 
 
 #import <UIKit/UIKit.h>
+
+enum BDToastVerticalAlignment {
+    BDToastVerticalAlignmentCenter = 0,
+    BDToastVerticalAlignmentTop = 1,
+    BDToastVerticalAlignmentBottom = 2
+    };
+typedef NSUInteger BDToastVerticalAlignment;
 @protocol BDToastViewProtocol;
 /**
  * Non-obstructive message label alert. (Think Growl or Toast on Android.)
@@ -46,20 +53,23 @@
 - (void)showToastWithText:(NSString*)text 
          onViewController:(UIViewController*)ctrlToShowOn;
 
-//shows toast in red for an error. 
-//The text is taken from the error's localizedDescription.
-- (void)showToastForError:(NSError*)error;
+/**
+ @return clear all Toasts everywhere in your app. 
+ */
 
-//clear all Toasts everywhere in your app.
 - (void)clearAllToasts;
 
-//All active toast UIView instances currently in your app.
+/**
+ @return All active toast UIView instances currently in your app. 
+ */
 -(NSArray*)allActiveToasts;
 
 /**
- The top point of the toast. This is where you set toast's location to appear on a view.
+ Vertical alignment of displayed toasts.
  */
-@property (nonatomic, assign) CGFloat toastOriginYOffsetFactor;
+@property (nonatomic, assign) BDToastVerticalAlignment verticalAlignment;
+
+
 
 /**
  If this property is not nil, each time this class will display a toast,
