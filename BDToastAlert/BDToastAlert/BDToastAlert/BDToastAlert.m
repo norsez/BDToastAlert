@@ -153,23 +153,17 @@
     [viewToShowOn addSubview:toastView];    
     
     //define the displayed area on the viewToShowOn
-    CGRect displayableBounds = CGRectMake(kMargin + viewToShowOn.frame.origin.x, 
-                                          kMargin + viewToShowOn.frame.origin.y, 
-                                          CGRectGetWidth(viewToShowOn.bounds) - (kMargin*2), 
-                                          CGRectGetHeight(viewToShowOn.bounds) - (kMargin*2) - (_isKeyboardShowing?kHeightKeyboard:0));
-    
+    CGPoint centerOfView = viewToShowOn.center;
+    if (_isKeyboardShowing) {
+        centerOfView = CGPointMake(centerOfView.x, centerOfView.y - kHeightKeyboard - kMargin);
+    }
     //place the toast according to the vertical alignment setting
     if (self.verticalAlignment == BDToastVerticalAlignmentCenter) {
-        toastView.frame =  CGRectMake( displayableBounds.origin.x + (0.5 *(displayableBounds.origin.x + CGRectGetWidth(displayableBounds) - CGRectGetWidth(toastView.frame))), 
-                                       displayableBounds.origin.y + (0.5 *(displayableBounds.origin.y + CGRectGetHeight(displayableBounds) - CGRectGetHeight(toastView.frame))), 
-                                      CGRectGetWidth(toastView.frame), 
-                                      CGRectGetHeight(toastView.frame));
+        toastView.center = centerOfView;
     }else if(self.verticalAlignment == BDToastVerticalAlignmentTop){
-        toastView.frame = CGRectOffset(toastView.bounds, 0.5 *(CGRectGetWidth(displayableBounds) - CGRectGetWidth(toastView.bounds)) , kMargin);
+        toastView.center = CGPointMake(centerOfView.x, kMargin);
     }else {
-        toastView.frame = CGRectOffset(toastView.bounds, 
-                                       0.5 *(CGRectGetWidth(displayableBounds) - CGRectGetWidth(toastView.bounds)) , 
-                                       CGRectGetHeight(displayableBounds) - CGRectGetHeight(toastView.bounds) + kMargin);
+        toastView.center = CGPointMake(centerOfView.x, CGRectGetHeight(viewToShowOn.bounds) - CGRectGetHeight(toastView.bounds));
     }
 
     toastView.frame = CGRectIntegral(toastView.frame);
