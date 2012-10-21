@@ -18,7 +18,7 @@ version API is simpler, and more importantly, now it looks great! See below.
 ##How to use
 Out of the box, all you need to do is first get the singleton like this:
 
-	BDToastAlert *toast = [BDToastAlert shared];
+	BDToastAlert *toast = [BDToastAlert sharedInstance];
 
 In order to display a message, call:
 
