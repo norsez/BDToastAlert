@@ -48,8 +48,8 @@
 {
     _textLabel = [[UILabel alloc] initWithFrame:CGRectZero];    
     _textLabel.backgroundColor = [UIColor clearColor];
-    _textLabel.textAlignment = UITextAlignmentCenter;
-    _textLabel.lineBreakMode = UILineBreakModeWordWrap;
+    _textLabel.textAlignment = NSTextAlignmentCenter;
+    _textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _textLabel.numberOfLines = 0;
     _textLabel.opaque = NO;
     _textLabel.textColor = [UIColor whiteColor];
@@ -156,7 +156,7 @@
     [super layoutSubviews];
     CGSize labelSize = [_textLabel.text sizeWithFont:_textLabel.font
                         constrainedToSize:self.maximumSize
-                                       lineBreakMode:UILineBreakModeWordWrap];
+                                       lineBreakMode:NSLineBreakByWordWrapping];
     self.bounds = CGRectMake(0,
                              0, 
                              labelSize.width + self.textBorderWidth*2, 
